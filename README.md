@@ -27,4 +27,7 @@ Contributions are welcome! If you find any issues or want to enhance the functio
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the mohaz License.
+
+# compile 
+this project made by mohaz
