@@ -6,6 +6,7 @@ from pydantic import BaseModel
 
 
 
+
 # Create the FastAPI instance
 app = FastAPI()
 
@@ -78,7 +79,6 @@ def create_data(item: MyDataCreateUpdate, db: Session = Depends(get_db)):
 
 
 # PUT full update of data
-@app.put("/put_endpoint/{id}")
 def update_data(id: int, item: MyDataCreateUpdate, db: Session = Depends(get_db)):
     data = db.query(MyData).filter(MyData.id == id).first()
     if data is None:
@@ -90,7 +90,7 @@ def update_data(id: int, item: MyDataCreateUpdate, db: Session = Depends(get_db)
     return data
 
 
-# PATCH partial update of data
+
 @app.patch("/patch_endpoint/{id}")
 def partial_update_data(id: int, item: MyDataCreateUpdate, db: Session = Depends(get_db)):
     data = db.query(MyData).filter(MyData.id == id).first()
